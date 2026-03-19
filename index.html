@@ -7,69 +7,71 @@
   <title>이커머스 사업 기획안</title>
   <style>
     :root{
-      --bg:#0b1020; --panel:#111a2e; --panel2:#0f172a; --line:#24324d;
-      --txt:#e5e7eb; --muted:#9fb0c8; --green:#03c75a; --blue:#60a5fa; --orange:#ff9800; --red:#f87171;
+      --bg:#f4f7fb; --panel:#ffffff; --panel2:#ffffff; --line:#dbe4f0;
+      --txt:#0f172a; --muted:#475569; --green:#2563eb; --blue:#2563eb; --orange:#ea8b00; --red:#dc2626;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(circle at top,#121c35 0%,#0b1020 60%);color:var(--txt);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.6}
-    .container{width:min(1120px,100%);margin:0 auto;padding:14px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.8}
+    .container{width:min(1060px,100%);margin:0 auto;padding:16px}
 
     /* cover (1.html tone) */
-    .cover{position:relative;background:#10152d;border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;padding:26px 18px;margin-bottom:14px;box-shadow:0 14px 36px rgba(0,0,0,.3)}
-    .cover::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:rgba(3,199,90,.14)}
+    .cover{position:relative;background:linear-gradient(135deg,#eff6ff 0%, #dbeafe 100%);border:1px solid #bfdbfe;border-radius:18px;overflow:hidden;padding:26px 18px;margin-bottom:14px;box-shadow:0 8px 24px rgba(30,64,175,.12)}
+    .cover::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:#dbeafe}
     .cover::after{content:"";position:absolute;left:-80px;bottom:-80px;width:220px;height:220px;border-radius:50%;background:rgba(255,152,0,.14)}
-    .cover h1{position:relative;z-index:1;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.15;font-weight:900;letter-spacing:-.02em}
-    .cover .sub{position:relative;z-index:1;margin-top:10px;color:#86efac;font-weight:500;font-size:clamp(14px,2.6vw,18px)}
+    .cover h1{position:relative;z-index:1;margin:0;font-size:clamp(28px,5vw,44px);line-height:1.15;font-weight:900;letter-spacing:-.02em;color:#0f172a}
+    .cover .sub{position:relative;z-index:1;margin-top:10px;color:#1e3a8a;font-weight:600;font-size:clamp(14px,2.6vw,18px)}
     .flow{position:relative;z-index:1;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-    .chip{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.09);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700}
+    .chip{border:1px solid #bfdbfe;background:#ffffff;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700;color:#1e40af}
 
     .toc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:14px}
-    .toc a{text-decoration:none;text-align:center;background:#131e35;border:1px solid var(--line);color:#dbe7ff;border-radius:10px;padding:8px 6px;font-size:12px;font-weight:700}
+    .toc a{text-decoration:none;text-align:center;background:#ffffff;border:1px solid #cbd5e1;color:#1e293b;border-radius:10px;padding:9px 6px;font-size:13px;font-weight:700}
 
-    .sec{background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 8px 20px rgba(2,8,23,.35)}
-    .sec h2{margin:0 0 10px;font-size:clamp(18px,3vw,24px);display:flex;align-items:center;gap:8px}
+    .sec{background:#ffffff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 4px 14px rgba(15,23,42,.08)}
+    .sec h2{margin:0 0 12px;font-size:clamp(20px,3.2vw,28px);display:flex;align-items:center;gap:8px;letter-spacing:-0.01em}
     .num{color:var(--green);font-weight:800}
-    .badge{font-size:11px;font-weight:800;color:#bbf7d0;background:rgba(3,199,90,.14);border:1px solid rgba(3,199,90,.35);padding:4px 8px;border-radius:999px}
+    .badge{font-size:11px;font-weight:800;color:#1d4ed8;background:#dbeafe;border:1px solid #bfdbfe;padding:4px 8px;border-radius:999px}
 
-    .para{background:rgba(15,23,42,.78);border:1px solid rgba(148,163,184,.22);border-radius:12px;padding:12px;margin-top:10px;position:relative}
+    .para{background:#ffffff;border:1px solid #dbe4f0;border-radius:12px;padding:14px;margin-top:12px;position:relative}
     .para::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--green),var(--blue));border-radius:12px 0 0 12px}
-    .para p{margin:0;color:#dbe5f3;font-size:15px;padding-left:4px}
+    .para p{margin:0;color:#1f2937;font-size:17px;line-height:1.85;padding-left:4px;word-break:keep-all;max-width:84ch}
 
     /* 2.html type split */
     .split{display:grid;grid-template-columns:1fr;gap:10px}
-    .box{background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.24);border-radius:12px;padding:12px}
-    .box h3{margin:0 0 8px;font-size:14px}
-    .box p{margin:0;font-size:15px;color:#dbe5f3}
+    .box{background:#ffffff;border:1px solid #dbe4f0;border-radius:12px;padding:12px}
+    .box h3{margin:0 0 8px;font-size:14px;color:#1e293b}
+    .box.problem h3{color:#b91c1c}
+    .box.opportunity h3{color:#1d4ed8}
+    .box p{margin:0;font-size:16px;line-height:1.8;color:#1f2937;word-break:keep-all;max-width:72ch}
 
     /* 3/4/5/6 cards */
     .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
-    .mini{background:rgba(30,41,59,.7);border:1px solid rgba(96,165,250,.3);border-radius:10px;padding:10px;font-size:13px;font-weight:700;color:#dbeafe}
+    .mini{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px;font-size:13px;font-weight:700;color:#1e3a8a}
 
     /* 7 monetization map */
     .road{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
-    .road .step{background:rgba(30,64,175,.16);border:1px solid rgba(96,165,250,.35);border-radius:10px;padding:10px;text-align:center;font-size:13px;font-weight:700;color:#bfdbfe}
+    .road .step{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px;text-align:center;font-size:13px;font-weight:700;color:#1e40af}
 
     /* 8 impact */
     .impact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
-    .impact{background:rgba(2,132,199,.12);border:1px solid rgba(56,189,248,.35);border-radius:11px;padding:11px;font-size:14px;font-weight:700;color:#bae6fd}
+    .impact{background:#f0f9ff;border:1px solid #bae6fd;border-radius:11px;padding:11px;font-size:14px;font-weight:700;color:#0c4a6e}
 
     /* 9 risk table style */
     .risk-table{margin-top:10px;border:1px solid rgba(148,163,184,.25);border-radius:12px;overflow:hidden}
     .risk-head,.risk-row{display:grid;grid-template-columns:38% 62%}
-    .risk-head{background:rgba(148,163,184,.1);font-size:12px;font-weight:800;color:#cbd5e1}
+    .risk-head{background:#f1f5f9;font-size:12px;font-weight:800;color:#334155}
     .risk-head > div,.risk-row > div{padding:10px;border-bottom:1px solid rgba(148,163,184,.15)}
     .risk-row:last-child > div{border-bottom:none}
-    .risk-left{color:#fecaca;font-weight:700}
-    .risk-right{color:#dbeafe}
+    .risk-left{color:#b91c1c;font-weight:700}
+    .risk-right{color:#1e293b}
 
-    .summary{margin-top:12px;border:1px dashed #3b82f6;background:rgba(30,64,175,.16);border-radius:12px;padding:14px;font-size:16px;color:#bfdbfe;font-weight:700}
+    .summary{margin-top:12px;border:1px dashed #60a5fa;background:#eff6ff;border-radius:12px;padding:14px;font-size:16px;color:#1e40af;font-weight:700}
 
     .media {
       margin: 10px 0 4px;
-      border: 1px solid rgba(148,163,184,.28);
+      border: 1px solid #cbd5e1;
       border-radius: 12px;
       overflow: hidden;
-      background: rgba(2,6,23,.4);
+      background: #ffffff;
     }
     .media img {
       width: 100%;
@@ -78,20 +80,19 @@
       object-fit: cover;
       display: block;
     }
-    .media .cap {
-      padding: 8px 10px;
-      font-size: 12px;
-      color: #93c5fd;
+     .media .cap {
+      padding: 9px 11px;
+      font-size: 13px;
+      color: #1e40af;
       border-top: 1px solid rgba(148,163,184,.2);
-      background: rgba(15,23,42,.75);
+      background: #eff6ff;
     }
 
     .footer{text-align:center;color:var(--muted);font-size:12px;margin:16px 0 8px}
 
     /* UX 개선: 내용 유지, 위계/리듬 개선 */
     .sec{scroll-margin-top:84px}
-    .sec:nth-of-type(odd){border-color:#2b3c5e}
-    .sec:nth-of-type(even){border-color:#264454; background:linear-gradient(180deg,#102035 0%,#0e1a2b 100%)}
+
     .sec .para:first-of-type{background:rgba(30,64,175,.14); border-color:rgba(96,165,250,.35)}
     .sec .para:first-of-type p{font-weight:700; color:#eaf2ff}
     .sec .media{box-shadow:0 8px 20px rgba(0,0,0,.28)}
@@ -102,7 +103,7 @@
       .toc{grid-template-columns:repeat(5,minmax(0,1fr))}
       .split{grid-template-columns:1fr 1fr}
       .sec{padding:18px}
-      .box p,.para p{font-size:16px}
+      .box p,.para p{font-size:18px}
     }
       .media img{aspect-ratio:16/9;height:auto}
     }
@@ -122,12 +123,7 @@
       transform: translateY(0) scale(1);
     }
 
-    .sec:hover {
-      box-shadow: 0 16px 34px rgba(2,8,23,.46);
-      border-color: #35507f;
-      transform: translateY(-3px);
-    }
-    .sec:hover h2 { color: #f1f5f9; }
+    
 
     .media {
       transform: translateZ(0);
@@ -197,8 +193,8 @@
       <h2><span class="num">2.</span> 시장 문제와 기회 <span class="badge">Market</span></h2>
       <div class="media" id="s2-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="시장 분석 및 문제·기회 구조" loading="lazy" referrerpolicy="no-referrer"/><div class="cap">시장 분석 및 문제·기회 구조</div></div>
       <div class="split">
-        <div class="box"><h3 style="color:#fca5a5">시장 문제</h3><p>현재 이커머스 시장은 누구나 쉽게 판매를 시작할 수 있는 구조로 발전했지만, 실제로 안정적인 수익을 만들 수 있는 판매자는 제한적이다. 특히 스마트스토어는 진입 장벽이 낮은 반면, 판매자 간 가격 경쟁이 매우 심하고 검색 노출 구조에 대한 이해가 부족할 경우 상품을 등록해도 판매가 발생하지 않는 경우가 많다.</p></div>
-        <div class="box"><h3 style="color:#86efac">기회 포인트</h3><p>초기 판매자 입장에서는 어떤 상품을 선정해야 하는지, 광고를 어떻게 집행해야 하는지, 어떤 방식으로 클릭률과 구매전환률을 높여야 하는지에 대한 실행 전략이 부족하다. 또한 멀티 플랫폼 운영이 중요해지고 있음에도 불구하고, 여러 플랫폼에 동일한 상품을 등록하고 재고, 주문, 가격, 광고를 각각 관리하는 것은 시간과 비용 측면에서 비효율적이다.</p></div>
+        <div class="box problem"><h3>시장 문제</h3><p>현재 이커머스 시장은 누구나 쉽게 판매를 시작할 수 있는 구조로 발전했지만, 실제로 안정적인 수익을 만들 수 있는 판매자는 제한적이다. 특히 스마트스토어는 진입 장벽이 낮은 반면, 판매자 간 가격 경쟁이 매우 심하고 검색 노출 구조에 대한 이해가 부족할 경우 상품을 등록해도 판매가 발생하지 않는 경우가 많다.</p></div>
+        <div class="box opportunity"><h3>기회 포인트</h3><p>초기 판매자 입장에서는 어떤 상품을 선정해야 하는지, 광고를 어떻게 집행해야 하는지, 어떤 방식으로 클릭률과 구매전환률을 높여야 하는지에 대한 실행 전략이 부족하다. 또한 멀티 플랫폼 운영이 중요해지고 있음에도 불구하고, 여러 플랫폼에 동일한 상품을 등록하고 재고, 주문, 가격, 광고를 각각 관리하는 것은 시간과 비용 측면에서 비효율적이다.</p></div>
       </div>
       <div class="para"><p>이러한 문제는 동시에 기회가 될 수 있다. 스마트스토어를 테스트베드로 활용하여 판매 가능성이 검증된 상품만 집중적으로 육성하고, 이를 기반으로 멀티 플랫폼 확장과 운영 자동화를 진행한다면 단순 판매를 넘어 시스템 기반의 사업 모델을 구축할 수 있다. 나아가 이 구조를 표준화하면 제3자에게도 동일한 판매 파이프라인을 제공할 수 있어, 단순 셀러를 넘어 플랫폼형 사업자로 확장할 수 있는 기회가 존재한다.</p></div>
     </section>
@@ -276,7 +272,6 @@
       <div class="summary">스마트스토어를 테스트베드로 활용하여 단일 상품을 검증하고, 이를 멀티 플랫폼 및 AI 자동화 구조로 확장한 뒤, 최종적으로 제3자에게 판매 시스템을 제공하여 수수료 기반 수익을 창출하는 이커머스 사업 모델이다.</div>
     </section>
 
-    <p class="footer">1~9 슬라이드 구조 톤 반영 완료 · 내용 원문 유지 · index.html 단일 파일</p>
   </main>
 
 
@@ -340,6 +335,35 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+})();
+</script>
+
+
+<script>
+(function(){
+  const secs = Array.from(document.querySelectorAll('.sec'));
+  const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+      if(entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+  secs.forEach(sec => io.observe(sec));
+
+  const map = new Map(tocLinks.map(a => [a.getAttribute('href').replace('#',''), a]));
+  const tocIO = new IntersectionObserver((entries)=>{
+    let target = null;
+    entries.forEach(e=>{ if(e.isIntersecting) target = e.target; });
+    if(!target) return;
+    tocLinks.forEach(a=>a.classList.remove('active'));
+    const a = map.get(target.id);
+    if(a) a.classList.add('active');
+  }, { threshold: 0.45 });
+  secs.forEach(sec => tocIO.observe(sec));
 })();
 </script>
 
